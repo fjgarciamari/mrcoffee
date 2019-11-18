@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Mr. Coffee</title>
+    <link rel="stylesheet" href="../css/tienda.css">
+    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script>
+        //Muestra Error si viene el parametro error a 1 en la URL
+        function compruebaError(){
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var error = url.searchParams.get("error");
+            if(error == "1"){
+                var modal = document.getElementById("modal-error");
+                modal.style.display = "block";
+                var aceptar = document.getElementsByClassName("modal-error__boton-aceptar")[0];
+                aceptar.onclick = function(){
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="compruebaError()">
+    <div class="container-flex-login">
+        <div class="formulario-login">
+            <form action="../php/controllers/validar.php" method="post">
+                <div class="formulario-login__cabecera">Iniciar Sesión</div>
+
+                <div class="formulario-login__fila">
+                        <div class="formulario-login__label">DNI</div>
+                        <input class="formulario-login__input" required type="text" name="dniCliente">
+                </div>
+                
+                <div class="formulario-login__fila">
+                    <div class="formulario-login__label">Contraseña</div>
+                    <input class="formulario-login__input" required type="password" name="pwd">
+                </div>
+                
+
+                <input class="formulario-login__boton" type="submit" name="login" value="Acceder">
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-error" class="modal">
+        <div class="modal-error__contenido">
+            <div class="modal-error__mensaje-error">El usuario no existe o la contraseña es incorrecta.</div>
+            <div class="modal-error__boton-aceptar">Aceptar</div>
+        </div>  
+    </div>
+</body>
+</html>

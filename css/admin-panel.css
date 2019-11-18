@@ -1,0 +1,302 @@
+html, 
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.panel-administrador{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+}
+
+.side-panel{
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.logo{
+    background-image: url("../img/logo.png");
+    background-size: 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+}
+
+.navigation__item{
+    font-size: 28px;
+
+    padding: 15px 15px 15px 50px;
+}
+
+.info-panel{
+    height: 100%;
+    background-color: #cfd0d6;
+}
+
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal__contenido {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+/* ESTILOS GENERALES DE BOTONES */
+.boton{
+    margin: 15px;
+    padding: 15px;
+    width: min-content;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 6px #303030;
+}
+
+.boton--azul{
+    background-color:  #08c5d1;
+    color: white;
+}
+
+.boton--verde{
+    background-color:  #08d14b;
+    color: white;
+    
+}
+
+.boton--verde:hover {background-color: #08a83d}
+
+.boton--verde:active {
+  background-color: #08a83d;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+.boton--rojo{
+    background-color:  #d13008;
+    color: white;
+}
+
+.boton--rojo:hover {background-color: #ad2806}
+
+.boton--rojo:active {
+  background-color: #ad2806;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+.modal-error__boton-aceptar:hover,
+.modal-error__boton-aceptar:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.barra-superior{
+    border-bottom: 1px solid #959699;
+    text-align: right;
+}
+
+.barra-superior__nombre-usuario {
+    display: inline-block;
+    font-size: 1.4vw;
+    margin: 15px;
+    
+}
+
+.barra-superior__desconectar{
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    background-image: url("../img/logout.png");
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.panel-usuarios{
+    margin:30px;
+}
+
+/* ESTILOS TABLA USUARIO*/
+
+.tabla-usuarios{
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.panel-usuario__add-usuario{
+    width: 100px;
+    font-size: 1.5vw;
+}
+
+.tabla-usuarios__cabecera{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    font-size: 1.4vw;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.tabla-usuarios__contenido-fila{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    font-size: 1.2vw;
+    text-align: center;
+    height: 75px;
+}
+
+.tabla-usuarios__contenido-valor{
+    vertical-align: middle;
+    line-height: 75px;
+}
+
+.tabla-usuarios__contenido-acciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* ESTILOS TABLA PRODUCTOS */
+
+.tabla-productos{
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.panel-productos__add-producto{
+    width: 215px;
+    font-size: 1.5vw;
+}
+
+.tabla-productos__cabecera{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+    font-size: 1.4vw;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.tabla-productos__contenido-fila{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+    font-size: 1vw;
+    text-align: center;
+    height: 150px;
+}
+
+.tabla-productos__contenido-valor{
+    
+}
+
+.tabla-productos__contenido-acciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.tabla-productos__contenido-foto img{
+    height: 30px;
+}
+
+.panel-productos{
+    margin:30px;
+}
+
+/* ESTILOS TABLA PEDIDOS */
+
+.tabla-pedidos{
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.panel-pedido__add-pedido {
+    width: 215px;
+    font-size: 1.5vw;
+}
+
+.tabla-pedidos__cabecera{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+    font-size: 1.4vw;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.tabla-pedidos__contenido-fila{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+    font-size: 1.2vw;
+    text-align: center;
+    height: 100px;
+}
+
+.tabla-pedido__contenido-acciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.panel-pedidos{
+    margin:30px;
+}
+
+.fila-form{
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.fila-form-acciones{
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #38220f;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    padding: 10px;
+ }
+
+ .navigation__item--active{
+     font-weight: bold;
+     color: #38220f;
+ }
+
+@media only screen and (max-width:1000px) { 
+    .panel-administrador{
+        width: 1000px;
+        overflow: scroll;
+    }
+}

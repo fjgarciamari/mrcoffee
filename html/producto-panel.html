@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../css/admin-panel.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="../js/producto-panel.js"></script>
+</head>
+<body>
+    
+
+    <div class="panel-administrador">
+        <div class="side-panel">
+            <div class="logo"></div>
+
+            <div class="navigation">
+                <div class="navigation__item navigation__item--usuarios"><a href="./user-panel.html">Panel de Usuarios</a></div>
+                <div class="navigation__item navigation__item--productos navigation__item--active"><a href="#">Gestión productos</a></div>
+                <div class="navigation__item navigation__item--pedidos"><a href="./pedidos-panel.html">Gestión de pedidos</a></div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="barra-superior">
+                    <div class="barra-superior__nombre-usuario">
+                        Administrador
+                    </div>
+                    <div class="barra-superior__desconectar">
+                        
+                    </div>
+            </div>
+            <div class="panel-productos">
+                <div class="panel-productos__add-producto boton boton--azul">
+                    Añadir producto
+                </div>
+
+                <div class="tabla-productos">
+                    <div class="tabla-productos__cabecera">
+                        <div class="tabla-productos__cabecera-item">
+                            ID
+                        </div>
+                        <div class="tabla-productos__cabecera-item">
+                            Foto
+                        </div>
+                        <div class="tabla-productos__cabecera-item">
+                            Nombre
+                        </div>
+                        <div class="tabla-productos__cabecera-item">
+                            Origen
+                        </div>
+                        <div class="tabla-productos__cabecera-item">
+                            Marca
+                        </div>
+                        <div class="tabla-productos__cabecera-item">
+                            Tipo
+                        </div>
+                        <div class="tabla-productos__cabecera-item">
+                            Peso
+                        </div>
+                        <div class="tabla-productos__cabecera-item">
+                            Unidades
+                        </div>
+                        <div class="tabla-productos__cabecera-item">
+                            Precio
+                        </div>
+                        <div class="tabla-productos__cabecera-item">
+                            Acciones
+                        </div>
+                    </div>
+                    <div class="tabla-productos__contenido">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <div class="footer">
+        DAW IES Conselleria 2019
+    </div>
+
+    <div class="modal" id="modal-add-producto">
+        <div class="modal__contenido">
+            <form id="form-add-producto">
+                <div class="fila-form">
+                    <div class="fila-form__label">Nombre</div>
+                    <input class="fila-form__input" type="text" name="nombre" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Origen</div>
+                    <input class="fila-form__input" type="text" name="origen" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Tipo</div>
+                    <input class="fila-form__input" type="text" name="tipoMolido" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Marca</div>
+                    <input class="fila-form__input" type="text" name="marca" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Peso</div>
+                    <input class="fila-form__input" type="number" name="peso" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Unidades</div>
+                    <input class="fila-form__input" type="number" name="unidades" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Precio</div>
+                    <input class="fila-form__input" type="number" name="precio" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Foto</div>
+                    <input class="fila-form__input" type="file" name="foto" required>
+                </div>
+
+                <div class="boton boton--azul" id="enviarProductoNuevo">Añadir producto</div>
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="modal-edit-producto">
+        <div class="modal__contenido">
+            <form id="form-edit-producto">
+                <div class="fila-form">
+                    <div class="fila-form__label">ID</div>
+                    <input class="fila-form__input" type="text" name="idProducto" readonly>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Nombre</div>
+                    <input class="fila-form__input" type="text" name="nombre">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Origen</div>
+                    <input class="fila-form__input" type="text" name="origen">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Tipo</div>
+                    <input class="fila-form__input" type="text" name="tipoMolido">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Marca</div>
+                    <input class="fila-form__input" type="text" name="marca">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Peso</div>
+                    <input class="fila-form__input" type="number" name="peso">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Unidades</div>
+                    <input class="fila-form__input" type="number" name="unidades">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Precio</div>
+                    <input class="fila-form__input" type="number" name="precio">
+                </div>
+                
+
+                <div class="boton boton--azul" id="modificarProducto">Modificar producto</div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

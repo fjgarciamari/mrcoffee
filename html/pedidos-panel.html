@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../css/admin-panel.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="../js/pedido-panel.js"></script>
+</head>
+<body>
+    
+
+    <div class="panel-administrador">
+        <div class="side-panel">
+            <div class="logo"></div>
+
+            <div class="navigation">
+                <div class="navigation__item navigation__item--usuarios"><a href="./user-panel.html">Panel de Usuarios</a></div>
+                <div class="navigation__item navigation__item--productos"><a href="./producto-panel.html">Gestión productos</a></div>
+                <div class="navigation__item navigation__item--pedidos navigation__item--active"><a href="#">Gestión de pedidos</a></div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="barra-superior">
+                <div class="barra-superior__nombre-usuario">
+                    Administrador
+                </div>
+                <div class="barra-superior__desconectar">
+                    
+                </div>
+            </div>
+            <div class="panel-pedidos">
+                <div class="panel-pedido__add-pedido boton boton--azul">
+                    Añadir pedido
+                </div>
+
+                <div class="tabla-pedidos">
+                    <div class="tabla-pedidos__cabecera">
+                        <div class="tabla-pedidos__cabecera-item">
+                            ID
+                        </div>
+                        <div class="tabla-pedidos__cabecera-item">
+                            Fecha
+                        </div>
+                        <div class="tabla-pedidos__cabecera-item">
+                            Dirección de entrega
+                        </div>
+                        <div class="tabla-pedidos__cabecera-item">
+                            Nº Tarjeta
+                        </div>
+                        <div class="tabla-pedidos__cabecera-item">
+                            Fecha Caducidad
+                        </div>
+                        <div class="tabla-pedidos__cabecera-item">
+                            Matricula Repartidor
+                        </div>
+                        <div class="tabla-pedidos__cabecera-item">
+                            Dni Cliente
+                        </div>
+                        <div class="tabla-pedidos__cabecera-item">
+                            Acciones
+                        </div>
+                    </div>
+                    <div class="tabla-pedidos__contenido">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <div class="footer">
+        DAW IES Conselleria 2019
+    </div>
+
+    <div class="modal" id="modal-add-pedido">
+        <div class="modal__contenido">
+            <form id="form-add-pedido">
+                <div class="fila-form">
+                    <div class="fila-form__label">Fecha</div>
+                    <input class="fila-form__input" type="date" name="fecha" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Dirección Entrega</div>
+                    <input class="fila-form__input" type="text" name="dirEntrega" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Nº Tarjeta</div>
+                    <input class="fila-form__input" type="number" name="nTarjeta" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Fecha Caducidad</div>
+                    <input class="fila-form__input" type="date" name="fechaCaducidad" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Matricula Repartidor</div>
+                    <input class="fila-form__input" type="text" name="matriculaRepartidor" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">DNI cliente</div>
+                    <input class="fila-form__input" type="text" name="dniCliente" required>
+                </div>
+
+                <div class="fila-form-acciones">
+                    <div class="boton boton--azul" id="enviarPedidoNuevo">Añadir pedido</div>
+                    <div class="boton boton--rojo" id="cancelarPedidoNuevo">Cancelar</div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="modal-edit-pedido">
+        <div class="modal__contenido">
+            <form id="form-edit-pedido">
+                <div class="fila-form">
+                    <div class="fila-form__label">ID</div>
+                    <input class="fila-form__input" type="text" name="idPedido" readonly>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Fecha</div>
+                    <input class="fila-form__input" type="date" name="fecha" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Dirección Entrega</div>
+                    <input class="fila-form__input" type="text" name="dirEntrega" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Nº Tarjeta</div>
+                    <input class="fila-form__input" type="number" name="nTarjeta" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Fecha Caducidad</div>
+                    <input class="fila-form__input" type="date" name="fechaCaducidad" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Matricula Repartidor</div>
+                    <input class="fila-form__input" type="text" name="matriculaRepartidor" required>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">DNI cliente</div>
+                    <input class="fila-form__input" type="text" name="dniCliente" required>
+                </div>
+                
+                <div class="fila-form-acciones">
+                    <div class="boton boton--azul" id="modificarPedido">Modificar pedido</div>
+                    <div class="boton boton--rojo" id="cancelarModificarPedido">Cancelar</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

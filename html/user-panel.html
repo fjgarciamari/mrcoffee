@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../css/admin-panel.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="../js/user-panel.js"></script>
+</head>
+<body>
+    
+
+    <div class="panel-administrador">
+        <div class="side-panel">
+            <div class="logo"></div>
+
+            <div class="navigation">
+                <div class="navigation__item navigation__item--usuarios navigation__item--active"><a href="#">Panel de Usuarios</a></div>
+                <div class="navigation__item navigation__item--productos"><a href="./producto-panel.html">Gestión productos</a></div>
+                <div class="navigation__item navigation__item--pedidos"><a href="./pedidos-panel.html">Gestión de pedidos</a></div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="barra-superior">
+                <div class="barra-superior__nombre-usuario">
+                    Administrador
+                </div>
+                <div class="barra-superior__desconectar">
+                    
+                </div>
+            </div>
+            <div class="panel-usuarios">
+                <div class="panel-usuario__add-usuario boton boton--azul">
+                    Añadir Usuario
+                </div>
+
+                <div class="tabla-usuarios">
+                    <div class="tabla-usuarios__cabecera">
+                        <div class="tabla-usuarios__cabecera-item">
+                            DNI
+                        </div>
+                        <div class="tabla-usuarios__cabecera-item">
+                            Nombre
+                        </div>
+                        <div class="tabla-usuarios__cabecera-item">
+                            Dirección
+                        </div>
+                        <div class="tabla-usuarios__cabecera-item">
+                            Email
+                        </div>
+                        <div class="tabla-usuarios__cabecera-item">
+                            Acciones
+                        </div>
+                    </div>
+                    <div class="tabla-usuarios__contenido">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <div class="footer">
+        DAW IES Conselleria 2019
+    </div>
+
+    <div class="modal" id="modal-add-usuario">
+        <div class="modal__contenido">
+            <form id="form-add-usuario">
+                <div class="fila-form">
+                    <div class="fila-form__label">DNI</div>
+                    <input class="fila-form__input" type="number" name="dniCliente">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Nombre</div>
+                    <input class="fila-form__input" type="text" name="nombre">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Dirección</div>
+                    <input class="fila-form__input" type="text" name="direccion">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Email</div>
+                    <input class="fila-form__input" type="text" name="email">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Password</div>
+                    <input class="fila-form__input" type="password" name="pwd">
+                </div>
+                <div class="fila-form-acciones">
+                    <div class="boton boton--azul" id="enviarUsuarioNuevo">Añadir usuario</div>
+                    <div class="boton boton--rojo" id="cancelarUsuarioNuevo">Cancelar</div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="modal-edit-usuario">
+        <div class="modal__contenido">
+            <form id="form-edit-usuario">
+                <div class="fila-form">
+                    <div class="fila-form__label">DNI</div>
+                    <input class="fila-form__input" type="text" name="dniCliente" readonly>
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Nombre</div>
+                    <input class="fila-form__input" type="text" name="nombre">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Dirección</div>
+                    <input class="fila-form__input" type="text" name="direccion">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Email</div>
+                    <input class="fila-form__input" type="text" name="email">
+                </div>
+                <div class="fila-form">
+                    <div class="fila-form__label">Password</div>
+                    <input class="fila-form__input" type="password" name="pwd">
+                </div>
+                <div class="fila-form-acciones">
+                    <div class="boton boton--azul" id="modificarUsuario">Modificar Usuario</div>
+                    <div class="boton boton--rojo" id="cancelarModificarUsuario">Cancelar</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
